@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IPerson } from './person/person.model';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,15 @@ export class AppComponent {
   title = 'testAngular';
   perro = 'perrito';
 
-  getPrint(event:string){
+  public person: IPerson = {
+    name: '',
+    lastName: '',
+    age: 0
+  }
+
+
+  getPrint(event:IPerson, parent?:string){
+    this.person = event;
     console.log(event);
     
   }
