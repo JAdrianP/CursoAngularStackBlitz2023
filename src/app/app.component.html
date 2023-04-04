@@ -1,5 +1,38 @@
 <p>componente principal</p>
+<button (click)="enablePerson = !enablePerson">crear/destruir</button>
+{{enablePerson}}
 <!-- esto ahora hace referencia a una variable del componente app.component -->
-<app-test1 [name]="name" [lastName]="lastName"></app-test1>
+<!-- esta directiva /ngIf permite crear y destruir el componente,por lo que se ejecuta el ngOnDestroy -->
+<app-test1 *ngIf="enablePerson" [name]="name" [lastName]="lastName">
+
+</app-test1>
+<!-- esto oculta em componente pero no lo elimina,por lo que no se ejecuta en ngOnDestroy -->
+<app-test1 [hidden]="enablePerson" [name]="name" [lastName]="lastName">
+
+</app-test1>
+<!-- EJEMPLO DE DESTRUCCION DE COMPONENTES CON NGIF -->
+<p *ngIf="enablePerson; else testelse">enablePerson es true</p>
+<ng-template #testelse>
+    <p>enablePerson es false</p>
+</ng-template>
+<!-- ejemplo de uso de ngfor -->
+<div *ngFor="let item of ['a','b','d','e','f'] ; let i = index;">
+    <p>hola {{item}} - index {{i}}</p>
+    <app-test1 [name]="item" *ngIf="i % 2 === 0">
+        <!-- no entiendo porque no puedo inyectar codigo en mi componente -->
+        <p>hola</p>
+    </app-test1>
+</div>
+
+
+<input type="number" [(ngModel)]="level">
+{{level}}
+
+<div [ngSwitch]="level">
+    <p *ngSwitchCase="1">yeeiiii</p>
+    <p *ngSwitchCase="2">yasssss</p>
+    <p *ngSwitchDefault>opcion por defecto</p>
+
+</div>
 
 <button (click)="name = 'juan'; lastName='santander'">Change name</button>

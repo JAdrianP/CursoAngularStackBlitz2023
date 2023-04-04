@@ -42,4 +42,9 @@ export class Test1Component implements OnInit, OnChanges, DoCheck {
     
   }
 
+  ngOnDestroy():void{
+    console.log('ngOnDestroy');
+    
+  }
+
 }

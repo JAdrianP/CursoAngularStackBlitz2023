@@ -9,8 +9,7 @@ export class AppComponent {
   title = 'testAngular';
   public name:string ="perico";
   public lastName:string ="rodriguez";
-
-
-
+  enablePerson: boolean = true;
+  level:number = 1;
 
 }
