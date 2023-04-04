@@ -1,0 +1,11 @@
+<div style="border: 1px solid red;">
+    persona funciona malamente
+
+    <p>Name: {{ name }}</p>
+    <p>Name: {{ lastName }}</p>
+    <p>Name: {{ age }}</p>
+    <!-- los parentesis se usan para los outputs y los corchetes para inputs -->
+    <button (click)="sendPrint($event)">PRINT</button>
+
+    <!-- (click) ==> sendPrint() ==> print.emit ==> (print) ==> getPrint() ==> console.log -->
+</div>

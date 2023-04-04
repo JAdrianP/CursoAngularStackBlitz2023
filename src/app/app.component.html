@@ -1,1 +1,5 @@
-<p>componente principal</p>
+<!-- si pones uno de los inputs entre corchetes lee variables del ts, pero solo del app component.ts -->
+<!-- lo suyo seria pasarlealgo al age por ts pero si no queremos lo podemos poner entre corchetes -->
+<app-person [nameTest]="perro" lastName="" [age]="0" ></app-person>
+<app-person (print)="getPrint($event)"></app-person>
+<app-person></app-person>
