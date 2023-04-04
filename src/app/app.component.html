@@ -12,3 +12,24 @@
 <p>{{person?.name}}</p>
 <p>{{person?.lastName}}</p>
 <p>{{person?.age}}</p>
+
+<!-- hay que poner FormsModule en los imports del app.module.ts, es un modulo de angular -->
+<!-- con esto habilitamos el two way binding -->
+<input type="text" [(ngModel)]="student">
+<p>{{student}}</p>
+
+<input type="number" [(ngModel)]="a">
+<input type="number" [(ngModel)]="b">
+<!-- no entiendo porque no puedo usar una variable c que sea la suma de las 2 aqui -->
+<p>{{a + b}}</p>
+
+<!-- esto es comunicacion del ts al html, por eso cuando cambiamos el valor del input en la interfaz no cambia, el parrafo -->
+<input type="text" [ngModel]="student">
+<p>{{student}}</p>
+
+<!-- esto le pasa informacion del html al ts solamente -->
+Last Name <input type="text" ngModel (ngModelChange)="getLastName($event)">
+
+<!-- usamos una variable local html y se la pasamos al ts para acceder a ella desde el ts -->
+Name <input type="text" #name>
+<button  (click)="printName(name)">Print name</button>
