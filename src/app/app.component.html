@@ -1,1 +1,5 @@
 <p>componente principal</p>
+<!-- esto ahora hace referencia a una variable del componente app.component -->
+<app-test1 [name]="name" [lastName]="lastName"></app-test1>
+
+<button (click)="name = 'juan'; lastName='santander'">Change name</button>

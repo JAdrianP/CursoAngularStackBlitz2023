@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'testAngular';
+  public name:string ="perico";
+  public lastName:string ="rodriguez";
+
+
+
+
 }
