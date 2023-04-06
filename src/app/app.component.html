@@ -1,1 +1,29 @@
 <p>componente principal</p>
+
+<!-- <div *ngIf="sw"> 
+   <p>mostrar datos</p> 
+</div>-->
+
+<!-- a diferencia del div de arriba el ng-container no aparece al inspeccionar elemento -->
+<!-- <ng-container *ngIf="sw"> 
+   <p>mostrar datos</p> 
+</ng-container>-->
+
+<!-- recordar que para usar el two way binding hay que importar el FormsModule en los imports del app.module.ts -->
+<input type="checkbox" [(ngModel)]="sw">
+
+<!-- realmente lo que estamos haciendo aqui es pasarle la varaible sw del TS al input de *upb-->
+<div *upb="sw" style="border: 3px dotted blue">
+    mi propia directiva
+</div>
+
+<!-- este es otro metodo para evitar usar el OnChanges ponemos un getter y setter en un input para que se llame
+al setter cada vez que actualicemos el input y se llame al getter en el html del componente para que se vea reflejado
+el cambio en el DOM -->
+
+<input type="text" [(ngModel)]="title">
+<!-- esta linea esta llamandp al set -->
+<test [message]="title">
+
+
+</test>
