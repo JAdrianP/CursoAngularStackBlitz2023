@@ -4,3 +4,15 @@
 <p>{{data | impure}}</p>
 
 <button (click)="data.push(4)">add</button>
+
+<button [routerLink]="'/user'"> go to user view</button>
+<button [routerLink]="'/'"> go to home</button>
+
+<button (click)="goToHome()">go to user with ts</button>
+<button (click)="goToUser()">go to home with ts</button>
+
+<div style="border: 2px solid red;">
+    <router-outlet>
+    
+    </router-outlet>
+</div>

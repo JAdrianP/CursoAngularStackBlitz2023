@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,7 @@ export class AppComponent {
   title = 'testAngular';
 
   data: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  constructor() {
+  constructor(private router: Router) {
 
     console.log("--------------funciones puras----------------");
 
@@ -34,5 +35,15 @@ export class AppComponent {
   impureExample(a: number, b: number): number {
 
     return a + b + Math.round(10 * Math.random());
+  }
+
+  goToUser()
+  {
+    this.router.navigate(['/user'])
+  }
+
+  goToHome()
+  {
+    this.router.navigate(['/'])
   }
 }
