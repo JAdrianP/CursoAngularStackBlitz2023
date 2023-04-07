@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeModule } from './home/home.module';
+import { UserModule } from './user/user.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -10,9 +13,15 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HomeModule,
+    UserModule,
+    //como hemos puesto esto aqui y el modulo exporta sus componentes
+    //ahora podemos usar los componentes en este modulo
+    SharedModule
   ],
   providers: [],
+  //esto esta solo en el componente raiz
   bootstrap: [AppComponent]
 })
 export class AppModule { }
