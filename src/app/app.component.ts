@@ -7,6 +7,11 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 })
 export class AppComponent {
   title = 'testAngular';
+  data ={
+    id:1,
+    name:',aroa',
+    lastname:'gomicia'
+  }
 
   //esta es la manera de enlazar variables del HTML al TS, las variables HTML son las que llevan # delante
   //si el static estuviera a true, en caso de estar la variable my text enlazada a un *ngIf y el el elemento 
