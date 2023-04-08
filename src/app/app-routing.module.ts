@@ -4,26 +4,27 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { View1Component } from './dashboard/view1/view1.component';
 import { View2Component } from './dashboard/view2/view2.component';
+import { ErrorComponent } from './error/error.component';
 
+//asi es como se hace la navegacion po modulos, cargando los modulos
 const routes: Routes = [
   {
-    path: 'login',
-    component: LoginComponent
+    path:'login',
+    loadChildren: () => import('./login/login.module').then((modulo)=>modulo.LoginModule)
   },
   {
-    path: 'dashboard',
-    component: DashboardComponent,
-    children:[
-      {
-        path: 'view1',
-        component: View1Component
-      },
-      {
-        path: 'view2',
-        component: View2Component
-      }
-    ]
+    path:'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then((modulo)=>modulo.DashboardModule)
+  },
+  {
+    path: 'error',
+    component: ErrorComponent
+  },
+  {
+    path: '**',
+    redirectTo: 'error'
   }
+ 
 ];
 
 @NgModule({

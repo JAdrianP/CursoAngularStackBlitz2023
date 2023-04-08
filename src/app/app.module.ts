@@ -11,10 +11,6 @@ import { View2Component } from './dashboard/view2/view2.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
-    DashboardComponent,
-    View1Component,
-    View2Component
   ],
   imports: [
     BrowserModule,
