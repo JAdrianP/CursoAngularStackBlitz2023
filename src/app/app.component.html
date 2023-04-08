@@ -1,1 +1,18 @@
 <p>componente principal</p>
+
+<input type="text" [(ngModel)]="id">
+<!-- lo que le pasamos al router link es la url en forma de array -->
+<button [routerLink]="['view1',id]">view1</button>
+
+<button [routerLink]="['view2',id,'listNames',id]">view2</button>
+
+<button (click)="goView1()">view 1 from ts</button>
+<button (click)="goView2()">view 2 from ts</button>
+
+
+<button [routerLink]="['view3']" [queryParams]="{name: 'maria', lastName:'perez'}">go to view 3</button>
+<button (click)="goView3()">go to view 3 from ts</button>
+<router-outlet>
+
+
+</router-outlet>
